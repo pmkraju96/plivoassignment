@@ -33,6 +33,10 @@ def home():
 			return "invalid key access denied"
 	else:
 		return "please provide access key for api"
+
+
+
+
 #---------------------------------- Function for adding the Contact -----------------------------------------------------#
 @app.route("/addContact",methods=["GET","POST"])
 def addContact():
@@ -71,6 +75,7 @@ def addContact():
 	
 	except:
 		return "please check the given values"
+
 
 
 #--------------------------------- Function for searching contacts by name -----------------------------------------------#
@@ -124,6 +129,8 @@ def searchContactByName(page):
 
 
 
+
+
 #----------------------------------------- Function for searching contact by email ---------------------------------------------------------
 #this does not require pagination because email is unique for each contacts for every email only one contact is assigned so for each email given we can have only one contact
 @app.route("/searchContactByEmail")
@@ -159,6 +166,8 @@ def searchContactByEmail():
 		return "please check the input value"
     
 
+
+#----------------------------------------------- Function for Deleting the Contact ----------------------------------------------
 
 
 @app.route("/deleteContact")
