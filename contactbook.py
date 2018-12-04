@@ -1,6 +1,6 @@
 from flask import Flask,request
 import pymysql
-import Auth
+
 
 app = Flask(__name__)
 
@@ -28,7 +28,7 @@ def home():
 	if(key):
 		authvalue = authorize(key)
 		if(authvalue):
-			return ("Welcome to the Contact Book Api  "+authvalue[0][0])
+			return ("Welcome to the Contact Book Api "+authvalue[0][0])
 		else:
 			return "invalid key access denied"
 	else:
@@ -40,9 +40,9 @@ def home():
 #---------------------------------- Function for adding the Contact -----------------------------------------------------#
 @app.route("/addContact",methods=["GET","POST"])
 def addContact():
-
 	try:
 		key = request.args.get("key",None)
+		print("key is"+key+"this")
 		if(key):
 			authvalue = authorize(key)
 			if(authvalue):
@@ -74,7 +74,7 @@ def addContact():
 
 	
 	except:
-		return "please check the given values"
+		return "please check the given values one of the values of key,name,email,number is missing or invalid url format"
 
 
 
