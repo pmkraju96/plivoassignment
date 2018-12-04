@@ -1,0 +1,19 @@
+1)To run this api we need a mysql databse by name plivo_assignment and table by name contacts and for authorization there is a authorization table
+
+2)running instruction python3 contactbook.py
+
+3)This app runs on the local host port 5000
+
+
+4)following api are implemented
+	i)/addContact
+	ii)/searchContactByName
+	iii)/searchContactByEmail
+	iv)/deleteContact
+
+
+for adding contact: url is localhost:5000/addContact?Key="some valid key"&name="somename"&email="someemail"&number="somenumber"
+for seearching contact by name: localhost:5000/searchContactByName?Key="some valid key"&name="somename"
+for seearching contact by name: localhost:5000/searchContactByEmail?Key="some valid key"&email="someemail"
+for deleting contact: localhost:5000/deleteContact?Key="some valid key"&email="emailofcontacttobedeleted"
+contacts can be deleted only by email as it is the primary key
